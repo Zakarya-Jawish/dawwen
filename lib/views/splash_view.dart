@@ -24,6 +24,7 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).textTheme;
     return Scaffold(
       backgroundColor: kPrimayColor,
       body: Center(
@@ -39,10 +40,11 @@ class _SplashViewState extends State<SplashView> {
                 child: Lottie.asset('assets/lotties/logo.json',
                     frameRate: FrameRate.max)),
             const Spacer(),
-            const Text('DAWWEN',
-                style: TextStyle(fontSize: 30, color: Colors.white)),
-            const Text('by JAWISH💻',
-                style: TextStyle(fontSize: 15, color: Colors.white)),
+            Text(
+              'DAWWEN',
+              style: theme.displayLarge,
+            ),
+            Text('by JAWISH💻', style: theme.bodyMedium),
             const SizedBox(
               height: 100,
             ),

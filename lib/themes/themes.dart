@@ -1,6 +1,5 @@
 import 'package:dawwen_app/helper/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 ThemeData lightMode = ThemeData(
   colorScheme: ColorScheme.light(
@@ -17,26 +16,15 @@ ThemeData lightMode = ThemeData(
       fontWeight: FontWeight.bold,
       fontSize: 20,
     ),
-    systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: Color.fromARGB(255, 25, 213, 255),
-      statusBarIconBrightness: Brightness.dark,
-    ),
   ),
-  floatingActionButtonTheme: FloatingActionButtonThemeData(
-    backgroundColor: kPrimayColor,
-  ),
+  floatingActionButtonTheme: floatingButtonTheme(),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
       type: BottomNavigationBarType.fixed,
       selectedItemColor: kPrimayColor,
       unselectedItemColor: Colors.grey,
       elevation: 20,
       backgroundColor: Colors.white),
-  textTheme: const TextTheme(
-      bodyLarge: TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.w600,
-    color: Colors.black,
-  )),
+  textTheme: textTheme(),
 );
 ThemeData darkMode = ThemeData(
   drawerTheme: DrawerThemeData(
@@ -56,14 +44,8 @@ ThemeData darkMode = ThemeData(
       fontWeight: FontWeight.bold,
       fontSize: 20,
     ),
-    systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: kPrimayColor,
-      statusBarIconBrightness: Brightness.light,
-    ),
   ),
-  floatingActionButtonTheme: FloatingActionButtonThemeData(
-    backgroundColor: kPrimayColor,
-  ),
+  floatingActionButtonTheme: floatingButtonTheme(),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     type: BottomNavigationBarType.fixed,
     selectedItemColor: kPrimayColor,
@@ -71,11 +53,41 @@ ThemeData darkMode = ThemeData(
     elevation: 20,
     backgroundColor: Colors.grey.shade900,
   ),
-  textTheme: const TextTheme(
+  textTheme: textTheme(),
+);
+
+FloatingActionButtonThemeData floatingButtonTheme() {
+  return FloatingActionButtonThemeData(
+    backgroundColor: kPrimayColor,
+  );
+}
+
+TextTheme textTheme() {
+  return const TextTheme(
+    displayLarge: TextStyle(
+      fontFamily: 'BalooBhaijaan2',
+      fontSize: 40,
+      fontWeight: FontWeight.bold,
+    ),
+    displayMedium: TextStyle(
+      fontFamily: 'BalooBhaijaan2',
+      fontSize: 28,
+      fontWeight: FontWeight.w600,
+    ),
     bodyLarge: TextStyle(
+      fontFamily: 'BalooBhaijaan2',
       fontSize: 18,
       fontWeight: FontWeight.w600,
-      color: Colors.white,
     ),
-  ),
-);
+    bodyMedium: TextStyle(
+      fontFamily: 'BalooBhaijaan2',
+      fontSize: 16,
+      fontWeight: FontWeight.normal,
+    ),
+    bodySmall: TextStyle(
+      fontFamily: 'BalooBhaijaan2',
+      fontSize: 14,
+      fontWeight: FontWeight.normal,
+    ),
+  );
+}

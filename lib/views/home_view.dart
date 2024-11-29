@@ -6,11 +6,21 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const Drawer(),
       appBar: AppBar(
-        title: const Text(
-          'home here',
-          style: TextStyle(fontFamily: 'BalooBhaijaan2', fontSize: 40),
+        title: Text(
+          'Notes',
+          style: Theme.of(context).textTheme.displayLarge,
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.search,
+              size: 35,
+            ),
+            onPressed: () {},
+          )
+        ],
       ),
     );
   }
