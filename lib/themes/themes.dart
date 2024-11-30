@@ -71,22 +71,26 @@ TextTheme textTheme() {
     ),
     displayMedium: TextStyle(
       fontFamily: 'BalooBhaijaan2',
-      fontSize: 28,
+      fontSize: 30,
+      fontWeight: FontWeight.w600,
+    ),
+    displaySmall: TextStyle(
+      fontFamily: 'BalooBhaijaan2',
+      fontSize: 22,
       fontWeight: FontWeight.w600,
     ),
     bodyLarge: TextStyle(
       fontFamily: 'BalooBhaijaan2',
-      fontSize: 18,
-      fontWeight: FontWeight.w600,
+      fontSize: 25,
     ),
     bodyMedium: TextStyle(
       fontFamily: 'BalooBhaijaan2',
-      fontSize: 16,
+      fontSize: 20,
       fontWeight: FontWeight.normal,
     ),
     bodySmall: TextStyle(
       fontFamily: 'BalooBhaijaan2',
-      fontSize: 14,
+      fontSize: 15,
       fontWeight: FontWeight.normal,
     ),
   );

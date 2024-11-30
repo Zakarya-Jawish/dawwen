@@ -1,3 +1,4 @@
+import 'package:dawwen_app/widgets/note_card.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/custom_appbar.dart';
@@ -11,7 +12,14 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       drawer: const CustomDrawer(),
       appBar: const CustomAppBar(),
-      body: ListView(),
+      body: Padding(
+        padding: const EdgeInsets.all(15),
+        child: ListView(
+          children: const [
+            NoteCard(),
+          ],
+        ),
+      ),
     );
   }
 }
