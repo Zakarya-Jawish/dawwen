@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:dawwen_app/extensions/context_ex.dart';
 import 'package:dawwen_app/helper/constants.dart';
 import 'package:dawwen_app/views/home_view.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,6 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context).textTheme;
     return Scaffold(
       backgroundColor: kPrimayColor,
       body: Center(
@@ -42,9 +42,9 @@ class _SplashViewState extends State<SplashView> {
             const Spacer(),
             Text(
               'DAWWEN',
-              style: theme.displayLarge,
+              style: context.textTheme.displayLarge,
             ),
-            Text('by JAWISH💻', style: theme.bodyMedium),
+            Text('by JAWISH💻', style: context.textTheme.bodyMedium),
             const SizedBox(
               height: 100,
             ),
