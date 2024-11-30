@@ -12,17 +12,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: context.textTheme.displayLarge,
       ),
       actions: [
-        IconButton(
-          style: ButtonStyle(
-            backgroundColor:
-                WidgetStateProperty.all(Colors.white.withOpacity(.1)),
-          ),
-          icon: const Icon(
-            Icons.search,
-            size: 35,
-          ),
-          onPressed: () {},
-        )
+        // SizedBox()
+        Container(
+            margin: const EdgeInsets.only(right: 15),
+            height: 55,
+            width: 55,
+            decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(20)),
+            child: IconButton(
+              icon: const Icon(
+                Icons.search,
+                size: 35,
+              ),
+              onPressed: () {},
+            )),
       ],
     );
   }

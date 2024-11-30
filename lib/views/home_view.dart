@@ -8,9 +8,10 @@ class HomeView extends StatelessWidget {
   static String id = 'homeview';
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      drawer: CustomDrawer(),
-      appBar: CustomAppBar(),
+    return Scaffold(
+      drawer: const CustomDrawer(),
+      appBar: const CustomAppBar(),
+      body: ListView(),
     );
   }
 }
