@@ -20,12 +20,15 @@ class NoteCard extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
-            title: Text(
-              'My account on git hub',
-              overflow: TextOverflow.ellipsis,
-              style: context.textTheme.displayMedium!
-                  .copyWith(color: Colors.black),
-              maxLines: 1,
+            title: Padding(
+              padding: const EdgeInsets.only(bottom: 10, top: 5),
+              child: Text(
+                'My account on git hub',
+                overflow: TextOverflow.ellipsis,
+                style: context.textTheme.displayMedium!
+                    .copyWith(color: Colors.black),
+                maxLines: 1,
+              ),
             ),
             subtitle: Text(
               'subtitle on this card and note my email and pass is subtitle on this card and note my email and pass is',
