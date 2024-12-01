@@ -9,12 +9,16 @@ class HomeView extends StatelessWidget {
   static String id = 'homeview';
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      drawer: CustomDrawer(),
-      appBar: CustomAppBar(),
-      body: Padding(
+    return Scaffold(
+      drawer: const CustomDrawer(),
+      appBar: const CustomAppBar(),
+      body: const Padding(
         padding: EdgeInsets.all(15),
         child: NoteListBuilder(),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {},
       ),
     );
   }

@@ -1,8 +1,8 @@
 import 'package:dawwen_app/widgets/note_card.dart';
 import 'package:flutter/material.dart';
 
-class ListBuilderNote extends StatelessWidget {
-  const ListBuilderNote({super.key});
+class NoteListBuilder extends StatelessWidget {
+  const NoteListBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
