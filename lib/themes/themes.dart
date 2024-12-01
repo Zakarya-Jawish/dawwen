@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 ThemeData lightMode = ThemeData(
   colorScheme: ColorScheme.light(
-    primary: kPrimayColor,
+    primary: kPrimaryColor,
   ),
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: const AppBarTheme(
@@ -20,7 +20,7 @@ ThemeData lightMode = ThemeData(
   floatingActionButtonTheme: floatingButtonTheme(),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: kPrimayColor,
+      selectedItemColor: kPrimaryColor,
       unselectedItemColor: Colors.grey,
       elevation: 20,
       backgroundColor: Colors.white),
@@ -32,7 +32,7 @@ ThemeData darkMode = ThemeData(
   ),
   scaffoldBackgroundColor: Colors.grey.shade900,
   colorScheme: ColorScheme.dark(
-    primary: kPrimayColor,
+    primary: kPrimaryColor,
   ),
   appBarTheme: AppBarTheme(
     titleSpacing: 20,
@@ -48,7 +48,7 @@ ThemeData darkMode = ThemeData(
   floatingActionButtonTheme: floatingButtonTheme(),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     type: BottomNavigationBarType.fixed,
-    selectedItemColor: kPrimayColor,
+    selectedItemColor: kPrimaryColor,
     unselectedItemColor: Colors.grey,
     elevation: 20,
     backgroundColor: Colors.grey.shade900,
@@ -58,13 +58,13 @@ ThemeData darkMode = ThemeData(
 
 FloatingActionButtonThemeData floatingButtonTheme() {
   return FloatingActionButtonThemeData(
-    backgroundColor: kPrimayColor,
+    backgroundColor: kPrimaryColor,
   );
 }
 
 TextTheme textTheme() {
-  return const TextTheme(
-    displayLarge: TextStyle(
+  return TextTheme(
+    displayLarge: const TextStyle(
       fontFamily: 'BalooBhaijaan2',
       fontSize: 40,
       fontWeight: FontWeight.bold,
@@ -73,25 +73,30 @@ TextTheme textTheme() {
       fontFamily: 'BalooBhaijaan2',
       fontSize: 30,
       fontWeight: FontWeight.w600,
+      color: kPrimaryBlack,
     ),
     displaySmall: TextStyle(
       fontFamily: 'BalooBhaijaan2',
       fontSize: 22,
       fontWeight: FontWeight.w600,
+      color: kPrimaryBlack,
     ),
     bodyLarge: TextStyle(
       fontFamily: 'BalooBhaijaan2',
       fontSize: 25,
+      color: kPrimaryBlack,
     ),
     bodyMedium: TextStyle(
       fontFamily: 'BalooBhaijaan2',
       fontSize: 20,
       fontWeight: FontWeight.normal,
+      color: kPrimaryBlack,
     ),
     bodySmall: TextStyle(
       fontFamily: 'BalooBhaijaan2',
-      fontSize: 15,
-      fontWeight: FontWeight.normal,
+      fontSize: 17,
+      fontWeight: FontWeight.bold,
+      color: kPrimaryBlack.withOpacity(.5),
     ),
   );
 }

@@ -9,33 +9,45 @@ class NoteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: context.height * 0.23,
       width: double.infinity,
-      padding: const EdgeInsets.all(7),
+      padding: const EdgeInsets.all(8),
+      margin: const EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
-        color: kPrimayColor,
+        color: kPrimaryColor,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
         children: [
           ListTile(
             title: Text(
-              'title of note',
-              style: context.textTheme.displayMedium,
+              'My account on git hub',
+              overflow: TextOverflow.ellipsis,
+              style: context.textTheme.displayMedium!
+                  .copyWith(color: Colors.black),
+              maxLines: 1,
             ),
             subtitle: Text(
-              'subtitle on this card and note',
-              style: context.textTheme.bodyLarge,
+              'subtitle on this card and note my email and pass is subtitle on this card and note my email and pass is',
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+              style:
+                  context.textTheme.bodyMedium!.copyWith(color: Colors.black),
             ),
             trailing: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.delete,
-                  size: 30,
-                )),
+              icon: Icon(
+                Icons.delete,
+                size: 30,
+                color: kPrimaryBlack,
+              ),
+              onPressed: () {},
+            ),
           ),
           const Spacer(),
-          Text(DateTime.now().toString()),
+          Text(
+            DateTime.now().toString(),
+            style: context.textTheme.bodySmall,
+          ),
         ],
       ),
     );
