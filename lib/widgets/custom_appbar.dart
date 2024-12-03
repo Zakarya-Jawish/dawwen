@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:dawwen_app/extensions/context_ex.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key});
-
+  const CustomAppBar({super.key, this.title});
+  final String? title;
   @override
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-        'Notes',
+        title!,
         style: context.textTheme.displayLarge,
       ),
       actions: [
