@@ -86,11 +86,10 @@ TextTheme textTheme() {
       fontSize: 25,
       color: kPrimaryBlack,
     ),
-    bodyMedium: TextStyle(
+    bodyMedium: const TextStyle(
       fontFamily: 'BalooBhaijaan2',
       fontSize: 20,
       fontWeight: FontWeight.normal,
-      color: kPrimaryBlack,
     ),
     bodySmall: TextStyle(
       fontFamily: 'BalooBhaijaan2',
