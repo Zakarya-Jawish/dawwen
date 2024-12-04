@@ -18,7 +18,7 @@ class HomeView extends StatelessWidget {
         onPressed: () {},
       ),
       body: const Padding(
-        padding: EdgeInsets.all(15),
+        padding: EdgeInsets.all(10),
         child: NoteListBuilder(),
       ),
       floatingActionButton: FloatingActionButton(

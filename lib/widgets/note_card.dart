@@ -1,8 +1,8 @@
 import 'package:dawwen_app/extensions/context_ex.dart';
-import 'package:dawwen_app/views/edit_note_view.dart';
 import 'package:flutter/material.dart';
 
 import '../helper/constants.dart';
+import '../views/note_view.dart';
 
 class NoteCard extends StatelessWidget {
   const NoteCard({super.key});
@@ -12,7 +12,7 @@ class NoteCard extends StatelessWidget {
     return InkWell(
       splashFactory: NoSplash.splashFactory,
       onTap: () {
-        Navigator.pushNamed(context, EditNoteView.id);
+        Navigator.pushNamed(context, NoteView.id);
       },
       child: Container(
         height: context.height * 0.23,
