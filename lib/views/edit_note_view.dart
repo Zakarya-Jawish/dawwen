@@ -6,8 +6,12 @@ class EditNoteView extends StatelessWidget {
   static String id = "editNoteView";
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: CustomAppBar(title: 'Edit Note'),
+    return Scaffold(
+      appBar: CustomAppBar(
+        title: 'Edit Note',
+        iconData: Icons.arrow_outward,
+        onPressed: () {},
+      ),
     );
   }
 }

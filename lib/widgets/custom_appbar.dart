@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:dawwen_app/extensions/context_ex.dart';
 
+import 'custom_icon_button.dart';
+
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, this.title});
+  const CustomAppBar(
+      {super.key, this.title, required this.iconData, required this.onPressed});
   final String? title;
+  final IconData iconData;
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -12,21 +17,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: context.textTheme.displayLarge,
       ),
       actions: [
-        // SizedBox()
-        Container(
-            margin: const EdgeInsets.only(right: 15),
-            height: 55,
-            width: 55,
-            decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.1),
-                borderRadius: BorderRadius.circular(20)),
-            child: IconButton(
-              icon: const Icon(
-                Icons.search,
-                size: 35,
-              ),
-              onPressed: () {},
-            )),
+        CustomIconButton(iconData: iconData, onPressed: onPressed),
       ],
     );
   }

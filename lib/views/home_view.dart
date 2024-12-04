@@ -12,7 +12,11 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const CustomDrawer(),
-      appBar: const CustomAppBar(title: 'Notes'),
+      appBar: CustomAppBar(
+        title: 'Notes',
+        iconData: Icons.search,
+        onPressed: () {},
+      ),
       body: const Padding(
         padding: EdgeInsets.all(15),
         child: NoteListBuilder(),
