@@ -9,8 +9,8 @@ import 'views/edit_note_view.dart';
 import 'views/note_view.dart';
 
 void main() async {
-  await Hive.initFlutter();
-  await Hive.openBox(kNoteBox);
+  // await Hive.initFlutter();
+  // await Hive.openBox(kNoteBox);
 
   runApp(const DawwenApp());
 }

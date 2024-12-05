@@ -1,7 +1,6 @@
-import 'package:dawwen_app/helper/constants.dart';
-import 'package:dawwen_app/widgets/custom_button.dart';
-import 'package:dawwen_app/widgets/custom_text_feild.dart';
 import 'package:flutter/material.dart';
+
+import 'add_note_form.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({super.key});
@@ -18,26 +17,9 @@ class AddNoteBottomSheet extends StatelessWidget {
             topRight: Radius.circular(30),
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 30, right: 13, left: 13),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const CustomTextFeild(
-                hintText: 'Title',
-                maxLength: 100,
-              ),
-              const SizedBox(height: 10),
-              const CustomTextFeild(hintText: 'Body', maxLine: 5),
-              const SizedBox(height: 40),
-              CustomButton(
-                function: () {},
-                text: 'Add Note',
-                color: kPrimaryColor,
-              ),
-              const SizedBox(height: 40),
-            ],
-          ),
+        child: const Padding(
+          padding: EdgeInsets.only(top: 30, right: 13, left: 13),
+          child: AddNoteForm(),
         ),
       ),
     );
