@@ -1,12 +1,20 @@
+import 'dart:io';
+
+import 'package:dawwen_app/models/note_model.dart';
 import 'package:dawwen_app/themes/themes.dart';
 import 'package:dawwen_app/views/home_view.dart';
 import 'package:dawwen_app/views/splash_view.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 import 'views/edit_note_view.dart';
 import 'views/note_view.dart';
 
 void main() async {
+  var path = Directory.current.path;
+  Hive
+    ..init(path)
+    ..registerAdapter(NoteModelAdapter());
   runApp(const DawwenApp());
 }
 
