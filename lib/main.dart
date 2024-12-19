@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dawwen_app/helper/constants.dart';
 import 'package:dawwen_app/models/note_model.dart';
 import 'package:dawwen_app/themes/themes.dart';
 import 'package:dawwen_app/views/home_view.dart';
@@ -15,6 +16,7 @@ void main() async {
   Hive
     ..init(path)
     ..registerAdapter(NoteModelAdapter());
+  await Hive.openBox(kNoteBox);
   runApp(const DawwenApp());
 }
 
