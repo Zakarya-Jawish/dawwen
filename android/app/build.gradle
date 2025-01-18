@@ -37,6 +37,10 @@ android {
             signingConfig = signingConfigs.debug
         }
     }
+    dependencies {
+  // Other dependencies
+  //implementation("com.android.tools.external.com-intellij:intellij-core:31.1.0-alpha01")
+}
 }
 
 flutter {
