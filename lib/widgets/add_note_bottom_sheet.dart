@@ -23,7 +23,7 @@ class AddNoteBottomSheet extends StatelessWidget {
           padding: const EdgeInsets.only(top: 30, right: 13, left: 13),
           child: BlocProvider(
             create: (context) => AddNoteCubit(),
-            child: BlocListener<AddNoteCubit, AddNoteState>(
+            child: BlocConsumer<AddNoteCubit, AddNoteState>(
               listener: (context, state) {
                 if (state is AddNoteFailureState) {
                   debugPrint("Error: Add note failed");
@@ -33,7 +33,10 @@ class AddNoteBottomSheet extends StatelessWidget {
                   Navigator.pop(context);
                 }
               },
-              child: const AddNoteForm(),
+              builder: (context, state) => AbsorbPointer(
+                absorbing: (state is AddNoteLoadingState),
+                child: const AddNoteForm(),
+              ),
             ),
           ),
         ),
