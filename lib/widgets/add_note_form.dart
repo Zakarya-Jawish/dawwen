@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dawwen_app/cubits/add_note_cubit/cubit/add_note_cubit.dart';
 import 'package:dawwen_app/models/note_model.dart';
 import 'package:flutter/material.dart';
@@ -43,25 +45,34 @@ class _AddNoteFormState extends State<AddNoteForm> {
             controller: bodyController,
           ),
           const SizedBox(height: 40),
-          CustomButton(
-            text: 'Add Note',
-            color: kPrimaryColor,
-            function: () {
-              if (formKey.currentState!.validate()) {
-                formKey.currentState!.save();
-                var note = NoteModel(
-                  title: titleController.text,
-                  body: bodyController.text,
-                  date: DateTime.now().toString(),
-                  color: Colors.blue.r.toInt(),
-                );
-                BlocProvider.of<AddNoteCubit>(context).addNote(
-                  note: note,
-                );
-              } else {
-                autovalidateMode = AutovalidateMode.always;
-                setState(() {});
-              }
+          BlocBuilder<AddNoteCubit, AddNoteState>(
+            builder: (context, state) {
+              log(state.toString());
+              return (state is AddNoteLoadingState)
+                  ? const Center(
+                      child: CircularProgressIndicator(),
+                    )
+                  : CustomButton(
+                      text: 'Add Note',
+                      color: kPrimaryColor,
+                      function: () {
+                        if (formKey.currentState!.validate()) {
+                          formKey.currentState!.save();
+                          var note = NoteModel(
+                            title: titleController.text,
+                            body: bodyController.text,
+                            date: DateTime.now().toString(),
+                            color: Colors.blue.r.toInt(),
+                          );
+                          BlocProvider.of<AddNoteCubit>(context).addNote(
+                            note: note,
+                          );
+                        } else {
+                          autovalidateMode = AutovalidateMode.always;
+                          setState(() {});
+                        }
+                      },
+                    );
             },
           ),
           const SizedBox(height: 40),
