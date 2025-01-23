@@ -1,4 +1,5 @@
 import 'package:dawwen_app/bloc_observer.dart';
+import 'package:dawwen_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:dawwen_app/helper/constants.dart';
 import 'package:dawwen_app/models/note_model.dart';
 import 'package:dawwen_app/themes/themes.dart';
@@ -25,17 +26,20 @@ class DawwenApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: {
-        SplashView.id: (contxt) => const SplashView(),
-        HomeView.id: (contxt) => const HomeView(),
-        EditNoteView.id: (contxt) => const EditNoteView(),
-        NoteView.id: (contxt) => const NoteView(),
-      },
-      theme: darkMode,
-      initialRoute: SplashView.id,
-      // home: const Splash(),
+    return BlocProvider(
+      create: (context) => NotesCubit(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        routes: {
+          SplashView.id: (contxt) => const SplashView(),
+          HomeView.id: (contxt) => const HomeView(),
+          EditNoteView.id: (contxt) => const EditNoteView(),
+          NoteView.id: (contxt) => const NoteView(),
+        },
+        theme: darkMode,
+        initialRoute: SplashView.id,
+        // home: const Splash(),
+      ),
     );
   }
 }

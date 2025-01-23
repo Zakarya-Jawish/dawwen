@@ -1,4 +1,5 @@
 import 'package:dawwen_app/cubits/add_note_cubit/cubit/add_note_cubit.dart';
+import 'package:dawwen_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -29,7 +30,7 @@ class AddNoteBottomSheet extends StatelessWidget {
                   debugPrint("Error: Add note failed");
                 }
                 if (state is AddNoteSuccessState) {
-                  debugPrint("Add note Success");
+                  BlocProvider.of<NotesCubit>(context).getAllNotes();
                   Navigator.pop(context);
                 }
               },

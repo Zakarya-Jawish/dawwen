@@ -1,5 +1,7 @@
+import 'package:dawwen_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:dawwen_app/extensions/context_ex.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../helper/constants.dart';
 import '../models/note_model.dart';
@@ -52,6 +54,7 @@ class NoteCard extends StatelessWidget {
                 ),
                 onPressed: () async {
                   await note.delete();
+                  BlocProvider.of<NotesCubit>(context).getAllNotes();
                 },
               ),
             ),
