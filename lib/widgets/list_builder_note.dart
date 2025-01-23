@@ -10,10 +10,14 @@ class NoteListBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NotesCubit, NotesState>(
       builder: (context, state) {
-        return ListView.builder(
-          itemBuilder: (context, index) => const NoteCard(),
-          itemCount: 3,
-        );
+        return (state is NotesSuccessState && state.notes.isNotEmpty)
+            ? ListView.builder(
+                itemBuilder: (context, index) => const NoteCard(),
+                itemCount: state.notes.length,
+              )
+            : const Center(
+                child: Text('let\'s statr type note now..'),
+              );
       },
     );
   }

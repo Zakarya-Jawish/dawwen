@@ -13,7 +13,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => NotesCubit(),
+      create: (context) => NotesCubit()..getAllNotes(),
       child: Scaffold(
         drawer: const CustomDrawer(),
         appBar: CustomAppBar(

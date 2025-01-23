@@ -9,15 +9,11 @@ part 'notes_state.dart';
 
 class NotesCubit extends Cubit<NotesState> {
   NotesCubit() : super(NotesInitialState());
-  List<NoteModel> notes = [];
+
   getAllNotes() {
     //we don't need loading state because nothing need wait
-    try {
-      var noteBox = Hive.box<NoteModel>(kNoteBox);
-      notes = noteBox.values.toList();
-      emit(NotesSuccessState());
-    } catch (e) {
-      emit(NotesFailureState(e.toString()));
-    }
+    //don't need try-catch because this simple code and try-catch is expinsive
+    var noteBox = Hive.box<NoteModel>(kNoteBox);
+    emit(NotesSuccessState(noteBox.values.toList()));
   }
 }
