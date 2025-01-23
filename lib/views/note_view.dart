@@ -18,13 +18,12 @@ class NoteView extends StatelessWidget {
           }),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Expanded(
-            child: SingleChildScrollView(
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'data datat data body here body here bodey data body here body here bodey ',
+                'data datat data body here body here bodey zakarya man good man man  data body here body here bodey ',
                 style: context.textTheme.bodyMedium!
                     .copyWith(fontSize: 26, fontWeight: FontWeight.bold),
               ),
@@ -32,12 +31,12 @@ class NoteView extends StatelessWidget {
                 height: 15,
               ),
               Text(
-                'here rhrer  body here body here bodey here rhrer  body here body here bodey here rhrer  body here body here bodey here rhrer  body here body here bodey here rhrer hherhererherherhhhhhhhhhhhdata body here body here bodey here rhrer hherhererherherhhhhhhhhhhh hherhererherherhhhhhhhhhhhhhhhhhhhh ',
+                'here rhrer  body here body here bodey here rhrerhere bodey here rhrer  bodyhere bodey here rhrer  bodyhere bodey here rhrer  bodyhere bodey here rhrer  bodyhere bodey here rhrer  bodyhere bodey here rhrer  bodyhere bodey here rhrer  body  body here body here bodey here rhrer  body here body here bodey here rhrer  body here body here bodey here rhrer hherhererherherhhhhhhhhhhhdata body here body here bodey here rhrer hherhererherherhhhhhhhhhhh hherhererherherhhhhhhhhhhhhhhhhhhhh ',
                 style: context.textTheme.bodyMedium!.copyWith(fontSize: 23),
               ),
             ],
           ),
-        )),
+        ),
       ),
     );
   }
