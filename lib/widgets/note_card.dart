@@ -2,11 +2,12 @@ import 'package:dawwen_app/extensions/context_ex.dart';
 import 'package:flutter/material.dart';
 
 import '../helper/constants.dart';
+import '../models/note_model.dart';
 import '../views/note_view.dart';
 
 class NoteCard extends StatelessWidget {
-  const NoteCard({super.key});
-
+  const NoteCard({super.key, required this.note});
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -29,7 +30,7 @@ class NoteCard extends StatelessWidget {
               title: Padding(
                 padding: const EdgeInsets.only(bottom: 10, top: 5),
                 child: Text(
-                  'My account on git hub',
+                  note.title,
                   overflow: TextOverflow.ellipsis,
                   style: context.textTheme.displayMedium!
                       .copyWith(color: Colors.black),
@@ -37,7 +38,7 @@ class NoteCard extends StatelessWidget {
                 ),
               ),
               subtitle: Text(
-                'subtitle on this card and note my email and pass is subtitle on this card and note my email and pass is',
+                note.body,
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
                 style:
@@ -54,7 +55,7 @@ class NoteCard extends StatelessWidget {
             ),
             const Spacer(),
             Text(
-              DateTime.now().toString(),
+              note.date,
               style: context.textTheme.bodySmall,
             ),
           ],
