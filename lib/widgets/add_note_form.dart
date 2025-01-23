@@ -4,6 +4,7 @@ import 'package:dawwen_app/cubits/add_note_cubit/cubit/add_note_cubit.dart';
 import 'package:dawwen_app/models/note_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 import '../helper/constants.dart';
 import 'custom_button.dart';
@@ -61,7 +62,8 @@ class _AddNoteFormState extends State<AddNoteForm> {
                           var note = NoteModel(
                             title: titleController.text,
                             body: bodyController.text,
-                            date: DateTime.now().toString(),
+                            date:
+                                '${DateFormat.yMd().format(DateTime.now())}  ${DateFormat.jms().format(DateTime.now())}',
                             color: Colors.blue.value,
                           );
                           BlocProvider.of<AddNoteCubit>(context).addNote(
