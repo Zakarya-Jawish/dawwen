@@ -50,7 +50,9 @@ class NoteCard extends StatelessWidget {
                   size: 30,
                   color: kPrimaryBlack,
                 ),
-                onPressed: () {},
+                onPressed: () async {
+                  await note.delete();
+                },
               ),
             ),
             const Spacer(),
