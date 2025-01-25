@@ -3,20 +3,22 @@ import 'package:dawwen_app/helper/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFeild extends StatelessWidget {
-  const CustomTextFeild({
-    super.key,
-    this.hintText,
-    this.maxLine,
-    this.maxLength,
-    this.controller,
-  });
+  const CustomTextFeild(
+      {super.key,
+      this.hintText,
+      this.maxLine,
+      this.maxLength,
+      this.controller,
+      this.initialValue});
   final String? hintText;
   final int? maxLine;
   final int? maxLength;
+  final String? initialValue;
   final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: initialValue,
       maxLines: maxLine,
       maxLength: maxLength,
       validator: (data) {

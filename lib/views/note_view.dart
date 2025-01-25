@@ -14,10 +14,10 @@ class NoteView extends StatelessWidget {
     NoteModel note = ModalRoute.settingsOf(context)!.arguments as NoteModel;
     return Scaffold(
       appBar: CustomAppBar(
-          title: note.title,
+          title: 'View Note',
           iconData: Icons.edit,
           onPressed: () {
-            Navigator.pushNamed(context, EditNoteView.id);
+            Navigator.pushNamed(context, EditNoteView.id, arguments: note);
           }),
       body: Padding(
         padding: const EdgeInsets.all(10.0),

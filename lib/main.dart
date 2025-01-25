@@ -33,7 +33,7 @@ class DawwenApp extends StatelessWidget {
         routes: {
           SplashView.id: (contxt) => const SplashView(),
           HomeView.id: (contxt) => const HomeView(),
-          EditNoteView.id: (contxt) => const EditNoteView(),
+          EditNoteView.id: (contxt) => EditNoteView(),
           NoteView.id: (contxt) => const NoteView(),
         },
         theme: darkMode,
