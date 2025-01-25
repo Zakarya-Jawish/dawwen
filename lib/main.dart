@@ -27,7 +27,7 @@ class DawwenApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => NotesCubit(),
+      create: (context) => NotesCubit()..getAllNotes(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
