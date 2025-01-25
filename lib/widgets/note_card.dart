@@ -15,7 +15,7 @@ class NoteCard extends StatelessWidget {
     return InkWell(
       splashFactory: NoSplash.splashFactory,
       onTap: () {
-        Navigator.pushNamed(context, NoteView.id);
+        Navigator.pushNamed(context, NoteView.id, arguments: note);
       },
       child: Container(
         height: context.height * 0.23,

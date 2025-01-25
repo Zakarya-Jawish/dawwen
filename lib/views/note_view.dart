@@ -1,17 +1,20 @@
 import 'package:dawwen_app/extensions/context_ex.dart';
+import 'package:dawwen_app/models/note_model.dart';
 import 'package:dawwen_app/views/edit_note_view.dart';
 import 'package:dawwen_app/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class NoteView extends StatelessWidget {
-  const NoteView({super.key});
+  const NoteView({
+    super.key,
+  });
   static String id = "NoteView";
-
   @override
   Widget build(BuildContext context) {
+    NoteModel note = ModalRoute.settingsOf(context)!.arguments as NoteModel;
     return Scaffold(
       appBar: CustomAppBar(
-          title: 'title here',
+          title: note.title,
           iconData: Icons.edit,
           onPressed: () {
             Navigator.pushNamed(context, EditNoteView.id);
@@ -23,7 +26,7 @@ class NoteView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'data datat data body here body here bodey zakarya man good man man  data body here body here bodey ',
+                note.title,
                 style: context.textTheme.bodyMedium!
                     .copyWith(fontSize: 26, fontWeight: FontWeight.bold),
               ),
@@ -31,7 +34,7 @@ class NoteView extends StatelessWidget {
                 height: 15,
               ),
               Text(
-                'here rhrer  body here body here bodey here rhrerhere bodey here rhrer  bodyhere bodey here rhrer  bodyhere bodey here rhrer  bodyhere bodey here rhrer  bodyhere bodey here rhrer  bodyhere bodey here rhrer  bodyhere bodey here rhrer  body  body here body here bodey here rhrer  body here body here bodey here rhrer  body here body here bodey here rhrer hherhererherherhhhhhhhhhhhdata body here body here bodey here rhrer hherhererherherhhhhhhhhhhh hherhererherherhhhhhhhhhhhhhhhhhhhh ',
+                note.body,
                 style: context.textTheme.bodyMedium!.copyWith(fontSize: 23),
               ),
             ],
