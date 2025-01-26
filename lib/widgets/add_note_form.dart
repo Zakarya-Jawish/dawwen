@@ -1,10 +1,8 @@
 import 'dart:developer';
 
 import 'package:dawwen_app/cubits/add_note_cubit/cubit/add_note_cubit.dart';
-import 'package:dawwen_app/models/note_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 
 import '../helper/constants.dart';
 import 'custom_button.dart';
@@ -59,16 +57,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
                       function: () {
                         if (formKey.currentState!.validate()) {
                           formKey.currentState!.save();
-                          var date = DateTime.now();
-                          var note = NoteModel(
+                          BlocProvider.of<AddNoteCubit>(context).addNote(
                             title: titleController.text,
                             body: bodyController.text,
-                            date:
-                                '${DateFormat.yMd().format(date)}  ${DateFormat.jms().format(date)}',
-                            color: Colors.blue.value,
-                          );
-                          BlocProvider.of<AddNoteCubit>(context).addNote(
-                            note: note,
+                            colorNum: Colors.blue.value,
                           );
                         } else {
                           autovalidateMode = AutovalidateMode.always;
