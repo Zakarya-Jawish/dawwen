@@ -17,7 +17,8 @@ class NoteView extends StatelessWidget {
           title: 'View Note',
           iconData: Icons.edit,
           onPressed: () {
-            Navigator.pushNamed(context, EditNoteView.id, arguments: note);
+            Navigator.pushReplacementNamed(context, EditNoteView.id,
+                arguments: note);
           }),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
