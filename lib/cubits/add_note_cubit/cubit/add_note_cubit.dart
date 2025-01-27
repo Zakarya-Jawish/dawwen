@@ -12,7 +12,7 @@ part 'add_note_state.dart';
 
 class AddNoteCubit extends Cubit<AddNoteState> {
   AddNoteCubit() : super(AddNoteInitialState());
-  Color? selectedColor = Colors.blue;
+  Color? selectedColor = kColors[0];
 
   addNote({
     required String title,

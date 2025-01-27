@@ -6,6 +6,8 @@ import 'package:dawwen_app/widgets/custom_text_form_feild.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../widgets/edit_list_color.dart';
+
 class EditNoteView extends StatefulWidget {
   const EditNoteView({super.key});
   static String id = "editNoteView";
@@ -61,8 +63,12 @@ class _EditNoteViewState extends State<EditNoteView> {
                 CustomTextFeild(
                   controller: bodyController,
                   hintText: 'body',
-                  maxLine: 15,
-                )
+                  maxLine: 13,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                EditListViewColor(note: note),
               ],
             ),
           ),

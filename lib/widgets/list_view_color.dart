@@ -26,6 +26,8 @@ class _ListViewColorState extends State<ListViewColor> {
             },
             child: ColorItem(
               color: kColors[index],
+              active: BlocProvider.of<AddNoteCubit>(context).selectedColor ==
+                  kColors[index],
             ),
           ),
           itemCount: kColors.length,

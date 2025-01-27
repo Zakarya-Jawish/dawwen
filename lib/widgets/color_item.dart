@@ -1,11 +1,9 @@
-import 'package:dawwen_app/cubits/add_note_cubit/cubit/add_note_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ColorItem extends StatelessWidget {
-  const ColorItem({super.key, this.color = Colors.blue});
+  const ColorItem({super.key, this.color = Colors.blue, required this.active});
   final Color color;
-
+  final bool active;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,9 +11,7 @@ class ColorItem extends StatelessWidget {
       child: CircleAvatar(
         radius: 19,
         backgroundColor: color,
-        child: BlocProvider.of<AddNoteCubit>(context).selectedColor == color
-            ? const Icon(Icons.check, color: Colors.white)
-            : null,
+        child: active ? const Icon(Icons.check, color: Colors.white) : null,
       ),
     );
   }
