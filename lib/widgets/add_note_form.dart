@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:dawwen_app/cubits/add_note_cubit/cubit/add_note_cubit.dart';
+import 'package:dawwen_app/widgets/list_view_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -43,7 +44,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
             maxLine: 5,
             controller: bodyController,
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 20),
+          const ListViewColor(),
+          const SizedBox(height: 20),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               log(state.toString());
@@ -60,7 +63,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
                           BlocProvider.of<AddNoteCubit>(context).addNote(
                             title: titleController.text,
                             body: bodyController.text,
-                            colorNum: Colors.blue.value,
                           );
                         } else {
                           autovalidateMode = AutovalidateMode.always;

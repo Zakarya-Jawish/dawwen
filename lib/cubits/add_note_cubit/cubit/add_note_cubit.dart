@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 import 'package:meta/meta.dart';
@@ -11,11 +12,11 @@ part 'add_note_state.dart';
 
 class AddNoteCubit extends Cubit<AddNoteState> {
   AddNoteCubit() : super(AddNoteInitialState());
+  Color? selectedColor = Colors.blue;
 
   addNote({
     required String title,
     required String body,
-    required int colorNum,
   }) async {
     emit(AddNoteLoadingState());
     var date = DateTime.now();
@@ -24,7 +25,7 @@ class AddNoteCubit extends Cubit<AddNoteState> {
       body: body,
       date:
           '${DateFormat.yMd().format(date)}  ${DateFormat.jms().format(date)}',
-      color: colorNum,
+      color: selectedColor!.value,
     );
 
     try {
