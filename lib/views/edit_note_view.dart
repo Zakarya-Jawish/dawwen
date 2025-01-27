@@ -6,7 +6,7 @@ import 'package:dawwen_app/widgets/custom_text_form_feild.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../widgets/edit_list_color.dart';
+import '../widgets/edit_list_view_color.dart';
 
 class EditNoteView extends StatefulWidget {
   const EditNoteView({super.key});
