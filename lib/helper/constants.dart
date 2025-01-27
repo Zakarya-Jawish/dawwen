@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-Color kPrimaryColor = const Color.fromARGB(255, 77, 135, 173);
+const Color kPrimaryColor =
+    Colors.deepOrangeAccent; //Color.fromARGB(255, 77, 135, 173);
 Color kPrimaryBlack = Colors.grey.shade900;
 const String kNoteBox = "NoteBox";
 List<Color> kColors = const [
@@ -9,4 +10,5 @@ List<Color> kColors = const [
   Color(0xffD9E76C),
   Color(0xff537D8D),
   Color(0xff482C3D),
+  Colors.orange
 ];

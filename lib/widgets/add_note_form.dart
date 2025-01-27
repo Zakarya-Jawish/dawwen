@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dawwen_app/cubits/add_note_cubit/cubit/add_note_cubit.dart';
 import 'package:dawwen_app/widgets/list_view_color.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +47,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(height: 20),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
-              log(state.toString());
               return (state is AddNoteLoadingState)
                   ? const Center(
                       child: CircularProgressIndicator(),

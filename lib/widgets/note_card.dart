@@ -3,9 +3,9 @@ import 'package:dawwen_app/extensions/context_ex.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../helper/constants.dart';
 import '../models/note_model.dart';
 import '../views/note_view.dart';
+import 'show_snack_bar.dart';
 
 class NoteCard extends StatelessWidget {
   const NoteCard({super.key, required this.note});
@@ -35,7 +35,7 @@ class NoteCard extends StatelessWidget {
                   note.title,
                   overflow: TextOverflow.ellipsis,
                   style: context.textTheme.displayMedium!
-                      .copyWith(color: Colors.black),
+                      .copyWith(color: Colors.white),
                   maxLines: 1,
                 ),
               ),
@@ -44,16 +44,18 @@ class NoteCard extends StatelessWidget {
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
                 style:
-                    context.textTheme.bodyMedium!.copyWith(color: Colors.black),
+                    context.textTheme.bodyMedium!.copyWith(color: Colors.white),
               ),
               trailing: IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.delete_sweep_outlined,
                   size: 30,
-                  color: kPrimaryBlack,
+                  color: Colors.white,
                 ),
                 onPressed: () async {
                   await note.delete();
+                  showSnak(context, 'Deleted Successfuly!', Colors.amber,
+                      Icons.warning_amber_outlined);
                   BlocProvider.of<NotesCubit>(context).getAllNotes();
                 },
               ),
@@ -61,7 +63,7 @@ class NoteCard extends StatelessWidget {
             const Spacer(),
             Text(
               note.date,
-              style: context.textTheme.bodySmall,
+              style: context.textTheme.bodySmall!.copyWith(color: Colors.white),
             ),
           ],
         ),

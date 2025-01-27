@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'add_note_form.dart';
+import 'show_snack_bar.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({super.key});
@@ -32,6 +33,8 @@ class AddNoteBottomSheet extends StatelessWidget {
                 if (state is AddNoteSuccessState) {
                   BlocProvider.of<NotesCubit>(context).getAllNotes();
                   Navigator.pop(context);
+                  showSnak(
+                      context, 'Added Successfuly!', Colors.green, Icons.check);
                 }
               },
               builder: (context, state) => AbsorbPointer(

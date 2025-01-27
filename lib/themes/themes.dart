@@ -2,7 +2,15 @@ import 'package:dawwen_app/helper/constants.dart';
 import 'package:flutter/material.dart';
 
 ThemeData lightMode = ThemeData(
-  colorScheme: ColorScheme.light(
+  inputDecorationTheme: InputDecorationTheme(
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(20),
+      borderSide: const BorderSide(
+        color: Colors.black,
+      ),
+    ),
+  ),
+  colorScheme: const ColorScheme.light(
     primary: kPrimaryColor,
   ),
   scaffoldBackgroundColor: Colors.white,
@@ -18,7 +26,7 @@ ThemeData lightMode = ThemeData(
     ),
   ),
   floatingActionButtonTheme: floatingButtonTheme(),
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       type: BottomNavigationBarType.fixed,
       selectedItemColor: kPrimaryColor,
       unselectedItemColor: Colors.grey,
@@ -27,11 +35,19 @@ ThemeData lightMode = ThemeData(
   textTheme: textTheme(),
 );
 ThemeData darkMode = ThemeData(
+  inputDecorationTheme: InputDecorationTheme(
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(20),
+      borderSide: const BorderSide(
+        color: Colors.white,
+      ),
+    ),
+  ),
   drawerTheme: DrawerThemeData(
     scrimColor: Colors.grey.shade900,
   ),
   scaffoldBackgroundColor: Colors.grey.shade900,
-  colorScheme: ColorScheme.dark(
+  colorScheme: const ColorScheme.dark(
     primary: kPrimaryColor,
   ),
   appBarTheme: AppBarTheme(
@@ -57,7 +73,7 @@ ThemeData darkMode = ThemeData(
 );
 
 FloatingActionButtonThemeData floatingButtonTheme() {
-  return FloatingActionButtonThemeData(
+  return const FloatingActionButtonThemeData(
     backgroundColor: kPrimaryColor,
   );
 }

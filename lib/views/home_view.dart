@@ -22,7 +22,10 @@ class HomeView extends StatelessWidget {
         child: NoteListBuilder(),
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
         onPressed: () {
           showModalBottomSheet(
             isScrollControlled: true,

@@ -32,21 +32,21 @@ class CustomTextFeild extends StatelessWidget {
       style: context.textTheme.bodyMedium,
       decoration: InputDecoration(
         hintText: hintText,
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20),
-          borderSide: const BorderSide(
-            color: Colors.white,
-          ),
-        ),
+        // enabledBorder: OutlineInputBorder(
+        //   borderRadius: BorderRadius.circular(20),
+        //   borderSide: const BorderSide(
+        //     color: Colors.white,
+        //   ),
+        // ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: kPrimaryColor,
           ),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: kPrimaryColor,
           ),
         ),
