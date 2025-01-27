@@ -48,7 +48,7 @@ class NoteCard extends StatelessWidget {
               ),
               trailing: IconButton(
                 icon: Icon(
-                  Icons.delete,
+                  Icons.delete_sweep_outlined,
                   size: 30,
                   color: kPrimaryBlack,
                 ),
