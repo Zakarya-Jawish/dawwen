@@ -1,6 +1,9 @@
 import 'package:dawwen_app/extensions/context_ex.dart';
 import 'package:dawwen_app/helper/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../cubits/notes_cubit/notes_cubit.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -31,6 +34,7 @@ class CustomDrawer extends StatelessWidget {
               value: isDarkMode,
               onChanged: (bool value) {
                 isDarkMode = value;
+                BlocProvider.of<NotesCubit>(context).toggleModeTheme();
               },
             ),
           ),

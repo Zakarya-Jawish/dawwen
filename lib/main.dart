@@ -28,17 +28,23 @@ class DawwenApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => NotesCubit()..getAllNotes(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        routes: {
-          SplashView.id: (contxt) => const SplashView(),
-          HomeView.id: (contxt) => const HomeView(),
-          EditNoteView.id: (contxt) => const EditNoteView(),
-          NoteView.id: (contxt) => const NoteView(),
+      child: BlocBuilder<NotesCubit, NotesState>(
+        builder: (context, state) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            routes: {
+              SplashView.id: (contxt) => const SplashView(),
+              HomeView.id: (contxt) => const HomeView(),
+              EditNoteView.id: (contxt) => const EditNoteView(),
+              NoteView.id: (contxt) => const NoteView(),
+            },
+            theme: BlocProvider.of<NotesCubit>(context).isDark
+                ? darkMode
+                : lightMode,
+            initialRoute: SplashView.id,
+            // home: const Splash(),
+          );
         },
-        theme: darkMode,
-        initialRoute: SplashView.id,
-        // home: const Splash(),
       ),
     );
   }

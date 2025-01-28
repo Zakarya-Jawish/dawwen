@@ -18,7 +18,7 @@ class NoteCard extends StatelessWidget {
         Navigator.pushNamed(context, NoteView.id, arguments: note);
       },
       child: Container(
-        height: context.height * 0.23,
+        height: context.height * 0.25,
         width: double.infinity,
         padding: const EdgeInsets.all(8),
         margin: const EdgeInsets.only(bottom: 15),

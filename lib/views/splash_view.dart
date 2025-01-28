@@ -42,9 +42,12 @@ class _SplashViewState extends State<SplashView> {
             const Spacer(),
             Text(
               'DAWWEN',
-              style: context.textTheme.displayLarge,
+              style:
+                  context.textTheme.displayLarge!.copyWith(color: Colors.white),
             ),
-            Text('by JAWISH💻', style: context.textTheme.bodyMedium),
+            Text('by JAWISH💻',
+                style: context.textTheme.bodyMedium!
+                    .copyWith(color: Colors.white)),
             const SizedBox(
               height: 100,
             ),

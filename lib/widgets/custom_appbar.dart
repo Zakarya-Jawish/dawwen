@@ -1,3 +1,4 @@
+import 'package:dawwen_app/helper/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:dawwen_app/extensions/context_ex.dart';
 
@@ -14,7 +15,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(
         title!,
-        style: context.textTheme.displayLarge,
+        style: context.textTheme.displayLarge!.copyWith(color: kPrimaryColor),
       ),
       actions: [
         CustomIconButton(iconData: iconData, onPressed: onPressed),

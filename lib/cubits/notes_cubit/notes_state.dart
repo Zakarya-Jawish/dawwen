@@ -6,3 +6,5 @@ sealed class NotesState {}
 final class NotesInitialState extends NotesState {}
 
 final class NotesSuccessState extends NotesState {}
+
+final class ToggleThemeMode extends NotesState {}

@@ -9,7 +9,8 @@ void showSnak(
         children: [
           Text(
             message,
-            style: const TextStyle(color: Colors.white),
+            style: const TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold),
           ),
           const Spacer(),
           Icon(

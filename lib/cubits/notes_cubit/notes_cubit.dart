@@ -17,4 +17,10 @@ class NotesCubit extends Cubit<NotesState> {
     notes = noteBox.values.toList();
     emit(NotesSuccessState());
   }
+
+  bool isDark = false;
+  toggleModeTheme() {
+    isDark = !isDark;
+    emit(ToggleThemeMode());
+  }
 }

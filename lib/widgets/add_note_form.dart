@@ -28,49 +28,51 @@ class _AddNoteFormState extends State<AddNoteForm> {
     return Form(
       key: formKey,
       autovalidateMode: autovalidateMode,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          CustomTextFeild(
-            hintText: 'Title',
-            maxLength: 100,
-            controller: titleController,
-          ),
-          const SizedBox(height: 10),
-          CustomTextFeild(
-            hintText: 'Body',
-            maxLine: 5,
-            controller: bodyController,
-          ),
-          const SizedBox(height: 20),
-          const ListViewColor(),
-          const SizedBox(height: 20),
-          BlocBuilder<AddNoteCubit, AddNoteState>(
-            builder: (context, state) {
-              return (state is AddNoteLoadingState)
-                  ? const Center(
-                      child: CircularProgressIndicator(),
-                    )
-                  : CustomButton(
-                      text: 'Add Note',
-                      color: kPrimaryColor,
-                      function: () {
-                        if (formKey.currentState!.validate()) {
-                          formKey.currentState!.save();
-                          BlocProvider.of<AddNoteCubit>(context).addNote(
-                            title: titleController.text,
-                            body: bodyController.text,
-                          );
-                        } else {
-                          autovalidateMode = AutovalidateMode.always;
-                          setState(() {});
-                        }
-                      },
-                    );
-            },
-          ),
-          const SizedBox(height: 40),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            CustomTextFeild(
+              hintText: 'Title',
+              maxLength: 100,
+              controller: titleController,
+            ),
+            const SizedBox(height: 10),
+            CustomTextFeild(
+              hintText: 'Body',
+              maxLine: 5,
+              controller: bodyController,
+            ),
+            const SizedBox(height: 20),
+            const ListViewColor(),
+            const SizedBox(height: 20),
+            BlocBuilder<AddNoteCubit, AddNoteState>(
+              builder: (context, state) {
+                return (state is AddNoteLoadingState)
+                    ? const Center(
+                        child: CircularProgressIndicator(),
+                      )
+                    : CustomButton(
+                        text: 'Add Note',
+                        color: kPrimaryColor,
+                        function: () {
+                          if (formKey.currentState!.validate()) {
+                            formKey.currentState!.save();
+                            BlocProvider.of<AddNoteCubit>(context).addNote(
+                              title: titleController.text,
+                              body: bodyController.text,
+                            );
+                          } else {
+                            autovalidateMode = AutovalidateMode.always;
+                            setState(() {});
+                          }
+                        },
+                      );
+              },
+            ),
+            const SizedBox(height: 40),
+          ],
+        ),
       ),
     );
   }
